@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:nestedScrollingEnabled="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/image_camera"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/camera"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/txt_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="Camera"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_newProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Product form Canon Brand"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="@id/txt_camera"
+            app:layout_constraintTop_toBottomOf="@id/txt_camera" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/ic_more_horiz_black_24dp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_newProduct" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_browse"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_blue_dark"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_camera">
+
+            <ImageView
+                android:id="@+id/image_shop"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/shop"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <ImageView
+                android:id="@+id/image_shop1"
+                android:layout_width="60dp"
+                android:layout_height="100dp"
+
+                android:src="@drawable/browse"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/image_shop"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txt_browse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="BROWSE BY"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toRightOf="@id/image_shop1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rounded_button"
+                android:text="Brand"
+                app:layout_constraintLeft_toLeftOf="@id/txt_browse"
+                app:layout_constraintLeft_toRightOf="@id/image_shop"
+                app:layout_constraintTop_toBottomOf="@id/txt_browse" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txt_latest_arrival"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Latest Arrivals"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_browse" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_button"
+            android:text="View All"
+            android:textAllCaps="false"
+            app:layout_constraintBaseline_toBaselineOf="@id/txt_latest_arrival"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_latestArrival"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_latest_arrival"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_upload"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_blue_dark"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_latestArrival">
+
+            <ImageView
+                android:id="@+id/image_shop2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/shop"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <ImageView
+                android:id="@+id/image_shop3"
+                android:layout_width="60dp"
+                android:layout_height="100dp"
+                android:src="@drawable/browse"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/image_shop2"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_Cont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="CAN'T FIND WHAT YOU"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toRightOf="@id/image_shop3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_looking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOOKING FOR?"
+                android:textColor="@android:color/background_dark"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toLeftOf="@id/txt_Cont"
+                app:layout_constraintTop_toBottomOf="@id/txt_Cont" />
+
+            <TextView
+                android:id="@+id/txt_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SEARCH BUY"
+                android:textColor="@android:color/background_dark"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toLeftOf="@id/txt_looking"
+                app:layout_constraintTop_toBottomOf="@id/txt_looking" />
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rounded_button"
+                android:text="Upload picture"
+                app:layout_constraintLeft_toLeftOf="@id/txt_search"
+                app:layout_constraintTop_toBottomOf="@id/txt_search" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txt_choose_by_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Choose by Country"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_upload" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_choose_by_country"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_help"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_blue_dark"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_country">
+
+            <ImageView
+                android:id="@+id/image_help"
+                android:layout_width="220dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/service"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_need"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="NEED HELP?"
+                android:textColor="@android:color/background_dark"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toRightOf="@id/image_help"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_customer_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CUSTOMER SERVICE"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toLeftOf="@id/txt_need"
+                app:layout_constraintTop_toBottomOf="@id/txt_need" />
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rounded_button"
+                android:text="Call Now   📞"
+                app:layout_constraintLeft_toLeftOf="@id/txt_need"
+                app:layout_constraintTop_toBottomOf="@id/txt_customer_service" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txt_popular_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Popular Products"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_help" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_popular_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_popular_product" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
